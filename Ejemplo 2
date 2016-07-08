@@ -1,0 +1,3 @@
+print("ejemplo dos ")
+x= input("ingrese el nombre")
+print("Hola amiguito ",x)
