@@ -1,3 +1,5 @@
 print("ejemplo dos ")
 x= input("ingrese el nombre")
 print("Hola amiguito ",x)
+
+gabriel este es como puro texto :9
