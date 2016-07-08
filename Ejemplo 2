@@ -1,8 +1,4 @@
 print("ejemplo dos ")
 x= input("ingrese el nombre")
-print("Hola amiguito ",x)
-
-gabriel este es como puro texto :9
-
-Al jared le gusta la dianita :v
+print("Hola amiguito ",x
 
