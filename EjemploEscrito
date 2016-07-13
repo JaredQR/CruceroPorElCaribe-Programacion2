@@ -21,6 +21,17 @@ Ventajas
 ⦁	Comunidad : Contribuimos al mejoramiento del software de los demás
 ⦁	Herramientas en línea:
 
-
- 
+1.- Crear un repositorio
+2.- CREAR UNA RAMA
+La ramificación es la manera de trabajar en diferentes versiones de un repositorio a la vez.
+Por defecto, su repositorio tiene una rama llamada maestro que está considerada como la rama definitiva.
+Utilizamos ramas de experimentar y hacer cambios antes de comprometerse a dominar 
+Cuando se crea una rama de la principal rama, que está realizando una copia, o una instantánea,
+de maestro , ya que estaba en ese momento en el tiempo.
+Si alguien más ha hecho cambios en el maestro de la rama mientras estaba trabajando en su rama, se podía tirar en esos cambios.
+ 3.- CONFIRMAR LOS CAMBIOS
+En GitHub, guardan cambios se llaman commit . Cada confirmación se ha asociado un mensaje de confirmación , 
+que es una descripción que explica por qué se hizo un cambio en particular. 
+4. ABRIR UNA SOLICITUD DE EXTRACCIÓN
+Cuando se abre una solicitud de extracción , que estás proponiendo los cambios y solicitando que alguien opinión y tire de su contribución y fusionarlas en su rama. 
  
