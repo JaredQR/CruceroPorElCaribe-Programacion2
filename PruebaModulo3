@@ -78,3 +78,56 @@ def restaurantes():
     print("Ingrese una opcion correcta.")
     restaurantes()
 
+def administrador():
+    print("Bienvenidoa al administrador ustede puede configurar las promociones")
+    print("\t[1]   |    Agregar ")
+    print("\t[2]   |    Modificar")
+    print("\t[3]   |    Eliminar")
+    print("\t[4]   |    Ver")
+    print("")
+    print("")
+    while True:
+        try:
+            contra=int(input("Constraseña: "))
+            break
+        except ValueError:
+            print("Contraseña incorrecta...")
+            menu()
+    if contra==1234561:
+        agregar()
+    elif contra==1234562:
+        modificar()
+    elif contra==1234563:
+        eliminar()
+    elif contra==1234564:
+        ver()
+    else:
+        print("Contraseña incorrecta...")
+        menu()
+
+def agregar():
+    import os,sys,sqlite3
+    con=sqlite3.connect('Registro.s3db')
+    print("Estas en el MENU>Administrador>Agregar")
+    print("")
+    puert=input("Ingrese el puerto de salida: ")
+    bord=input("Ingrese la embarcacione :")
+    os.system('cls')
+    cursor=con.cursor()
+    cursor.execute("insert into Promociones(Puerto_Salida,A_Bordo_de)values('"+puert+"','"+bord+"')")
+    con.commit()
+    con.close()
+    menu()
+def salir():
+    import os,sys
+    sal=input("Usted esta seguro que desea SALIR ?  [si]o[no] :")
+    if (sal=='si' or sal=='Si' or sal=='SI'):
+        print("")
+        print("Cerrando Sesion...")
+
+    elif (sal=='no' or sal=='No' or sal=='NO'):
+        menu()
+        salir()
+    else:
+        print("Ud debe tomar una decision ...")
+        salir()
