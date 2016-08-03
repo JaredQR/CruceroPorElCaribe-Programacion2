@@ -31,5 +31,3 @@ def DISENOBASE():
         elif abc==2:
             sacarpuerto()
             DISENOBASE()
-        elif abc==3:
-            verpuertos()
