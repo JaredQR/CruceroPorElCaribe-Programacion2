@@ -119,6 +119,7 @@ def agregar():
     con.close()
     menu()
 def salir():
+
     import os,sys
     sal=input("Usted esta seguro que desea SALIR ?  [si]o[no] :")
     if (sal=='si' or sal=='Si' or sal=='SI'):
@@ -131,3 +132,54 @@ def salir():
     else:
         print("Ud debe tomar una decision ...")
         salir()
+        
+def ver():
+    import os,sys,sqlite3
+    con=sqlite3.connect('Registro.s3db')
+    cursor=con.cursor()
+    cursor.execute("select * from  Promociones")
+    print("Esta en el MENU > Administrador > Ver")
+    print("")
+    print("\tCod     \tPuerto_Salida   \tA_Bordo_de")
+    print("\t------------------------------------------------------")
+    for Promociones in cursor:
+        productos='\t'+str(Promociones[0])+'\t'+str(Promociones[1])+'\t'+str(Promociones[3])
+        print(str(productos))
+    con.close
+    print('')
+    menu()
+    
+def modificar():
+    import os,sys,sqlite3
+    con=sqlite3.connect('Registro.s3db')
+    cursor=con.cursor()
+    cursor.execute("select * from  Promociones")
+    print("Esta en el MENU > Administrador > modificar")
+    print("")
+    print("\tCod     \tPuerto Salida   \tA Bordo de")
+    print("\t------------------------------------------------------")
+    for Promociones in cursor:
+        productos='\t'+str(Promociones[0])+'\t'+str(Promociones[1])+'\t'+str(Promociones[3])
+        print(str(productos))
+        print("")
+    cod=input("Digite el codigo del producto a modificar :")
+    for productos in Promociones:
+        if int(productos[0])==int(cod):
+            Puerto_Salida=productos[1]
+            A_Bordo_de=productos[2]
+            encontrado=True
+            break
+    Puerto_Salida=input("Digite el nombre nuevo"+Puerto_Salida+":")
+    A_Bordo_de=input("Digite el nombre nuevo"+A_Bordo_de+":")
+    sql="update productos set Puerto_Salida'"+Puerto_Salida+"','"+A_Bordo_de+"' where Cod="+cod
+    cursor.execute(sql)
+    con.commint()
+    con.close()
+    os.system("cls")
+    print("El producto a sido modificado!!!")
+    print("")
+    menu()
+        
+            
+    
+menu()
