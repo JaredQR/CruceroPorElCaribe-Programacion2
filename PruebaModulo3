@@ -97,6 +97,76 @@ def anadircategoria():
     cursor.execute("insert into TABCATEGORIAS(categoria, tempbaja, tempmed, tempalta) values ('"+categ+"','"+TB+"','"+TM+"','"+TA+"')")
     con.commit()
     con.close()
+    
+def vercategoria():
+    import sys, os, sqlite3
+    con = sqlite3.connect('DISENHO.s3db')
+    cursor=con.cursor()
+    cursor.execute("select * from TABCATEGORIAS")
+    print()
+    print ("\t Cod    \t Categoria  \t  TempBaja    \t  TempMed  \t  TempAlta")
+    print("********************************************************************")
+    for TABCATEGORIAS in cursor:
+        vercategorias='\t'+str(TABCATEGORIAS[0])+'\t'+"      "+str(TABCATEGORIAS[1])+'\t'+"     "+str(TABCATEGORIAS[2])+'\t'+"   "+str(TABCATEGORIAS[3])+'\t'+str(TABCATEGORIAS[4])
+        print(str(vercategorias))
+    con.close
+    print()
+
+def modificarcategoria():
+    import sys, os, sqlite3
+    llave=[]
+    con = sqlite3.connect('DISENHO.s3db')
+    cursor=con.cursor()
+    cursor.execute("select * from TABCATEGORIAS")
+    print()
+    print ("\t Cod    \t Categoria  \t  TempBaja    \t  TempMed  \t  TempAlta")
+    print("********************************************************************")
+    for TABCATEGORIAS in cursor:
+        llave.append(TABCATEGORIAS)
+        vercategorias='\t'+str(TABCATEGORIAS[0])+'\t'+"      "+str(TABCATEGORIAS[1])+'\t'+"     "+str(TABCATEGORIAS[2])+'\t'+"   "+str(TABCATEGORIAS[3])+'\t'+str(TABCATEGORIAS[4])
+        print(str(vercategorias))
+        print("")
+    cod=input("Ingrese el codigo del puerto que desea modificar :")
+    for TABCATEGORIAS in llave:
+        if int(TABCATEGORIAS[0]==int(cod)):
+               C1=TABCATEGORIAS[1]
+               Cbaja=TABCATEGORIAS[2]
+               Cmed=TABCATEGORIAS[3]
+               Calta=TABCATEGORIAS[4]
+               jared=True
+               break
+    C1=input("Digite la nueva categoria  "+C1+":")
+    Cbaja=input("Digite el precio de temporada baja "+str(Cbaja)+":")
+    Cmed=input("Digite el nuevo precio de temporada media "+str(Cmed)+":")
+    Calta=input("Digite el nuevo precio de temporada alta "+str(Calta)+":")
+    
+    sql="update TABCATEGORIAS set categoria='"+C1+"', tempbaja='"+Cbaja+"' , tempmed='"+Cmed+"' , tempalta='"+Calta+"' where Cod="+cod
+    cursor.execute(sql)
+    con.commit()
+    con.close()
+    os.system("cls")
+    print("El producto a sido modificado")
+    
+def sacarcategoria():
+    import sys, os, sqlite3
+    con = sqlite3.connect('DISENHO.s3db')
+    cursor=con.cursor()
+    cursor.execute("select * from TABCATEGORIAS")
+    print("Aqui puedes eliminar los puertos")
+    print()
+    print ("\t Cod    \t Categoria  \t  TempBaja    \t  TempMed  \t  TempAlta")
+    print("********************************************************************")
+    for TABCATEGORIAS in cursor:
+        vercategorias='\t'+str(TABCATEGORIAS[0])+'\t'+"      "+str(TABCATEGORIAS[1])+'\t'+"     "+str(TABCATEGORIAS[2])+'\t'+"   "+str(TABCATEGORIAS[3])+'\t'+str(TABCATEGORIAS[4])
+        print(str(vercategorias))
+        print("")
+    cod=input("Ingrese el codigo que desea eliminar :")
+    sql="delete from TABCATEGORIAS where Cod="+cod
+    cursor.execute(sql)
+    con.commit()
+    con.close()
+    os.system('cls')
+    print("Elimino un puerto ")
 
 import sys
 import moduloinicio
