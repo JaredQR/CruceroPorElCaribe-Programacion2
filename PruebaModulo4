@@ -263,3 +263,13 @@ def embarcacion():
           print("Ingrese una opcion valida, intente de nuevo porfavor...")
           embarcacion()
           print("")
+
+def salir():
+    sal=input("Realmente deseas salir SI/NO: ")
+    if sal=="Si" or sal=="SI" or sal=="si":
+        sys.exit(5)
+    elif sal=="NO" or sal=="no" or sal=="No":
+        menuprincipal()
+    else:
+        print("Ingrese  SI/NO porfavor")
+        salir()
