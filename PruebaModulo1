@@ -124,3 +124,17 @@ def administrador():
         print("Contraseña incorrecta...")
         
         menu()
+
+def op():
+    print("")
+    s1=input("Deseas regresar al menú principal SI/NO: ")
+    if s1=="Si" or s1=="SI" or s1=="si":
+        menuprincipal()
+    elif s1=="NO" or s1=="no" or s1=="No":
+        salir()
+    else:
+        print("")
+        print("Ingrese  SI/NO porfavor")
+        op()
+
+menuprincipal()
