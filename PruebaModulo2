@@ -49,3 +49,22 @@ def embarcacion():
     print("")
     t=input("\n\tIngrese la opcion que desee: ")
     print("")
+if t=="1":
+        muse()
+    if t=="2":
+        cloud()
+    elif t=="3":
+        wind()
+    elif t=="4":
+        discover()
+    elif t=="5":
+        shadow()
+    elif t=="6":
+          whisper()
+    elif t=="7":
+          spirit()
+    else:
+          print("Ingrese una opcion valida, intente de nuevo porfavor...")
+          embarcacion()
+          print("")
+          
