@@ -1,0 +1,196 @@
+import sys
+import os
+import time
+
+from moduloreservaciones import*
+
+def menuprincipal():
+    os.system("cls")   
+    print("      -------------------------------------")
+    print("     |  ROYALCARIBBEAN - INTERNATIOAL ®.   |")
+    print("      -------------------------------------")
+    print("")
+    print("\t[1]  |     Pagina Principal.")
+    print("\t[2]  |     Reservaciones.")
+    print("\t[3]  |     Por que ROYALCARIBBEAN-INTERNATIONAL ®.")
+    print("\t[4]  |     Embarcaciones")
+    print("\t[5]  |     Promociones.")
+    print("\t[6]  |     A Bordo")
+    print("\t[7]  |     Restaurantes.")
+    print("\t[8]  |     Ayuda")
+    print("\t[9]  |     Configuracion")
+    print("\t[10] |     Salir del programa.")
+    print("")
+    t=input("\n\tIngrese la opcion que desee: ")
+    if t=="1":
+        
+        paginaprincipal()
+    if t=="2":
+        
+        menureser()
+    elif t=="3":
+        
+        porque()
+    elif t=="4":
+        
+        embarcacion()
+    elif t=="5":
+        
+        promociones()
+    elif t=="6":
+        
+        abordo()
+    elif t=="7":
+        
+        configuracion()
+    elif t=="8":
+        
+        salir()
+    else:
+        print("Ingrese un valor correcto")
+        menuprincipal()
+
+
+import sys
+import os
+def menu():
+    print("")
+    print("\tMENU")
+    print("\t[1]  |   Diseña tu viaje")
+    print("\t[2]  |   Promociones")
+    print("\t[3]  |   Registrate")
+    print("\t[4]  |   Contactanos")
+    print("\t[5]  |   Ayuda")
+    print("\t[6]  |   Administrador")
+    print("\t[6]  |   Salir")
+    print("")
+    while True:
+        try:
+            o=int(input("Ingres la operacion que desea realizar: "))
+            break
+        except ValueError:
+            print("Ingrese una operacion valida .....")
+    if o==1:
+        diseñoviaje()
+    elif o==2:
+        promociones()
+    elif o==3:
+        registrate()
+    elif o==4:
+        contactanos()
+    elif o==5:
+        ayuda()
+    elif o==6:
+        administrador()
+    elif o==7:
+        salir()
+    else:
+        print("Ingrese una opcion segun nuestro Menu")
+        menu()
+
+
+def administrador():
+
+    print("Bienvenidoa al administrador ustede puede configurar las promociones")
+    print("\t[1]   |    Agregar ")
+    print("\t[2]   |    Modificar")
+    print("\t[3]   |    Eliminar")
+    print("\t[4]   |    Ver")
+    print("")
+    print("")
+    
+    while True:
+        try:
+            contra=int(input("Constraseña: "))
+            break
+        except ValueError:
+            print("Contraseña incorrecta...")
+            menu()
+            
+    if contra==1234561:
+        agregar()
+        
+    elif contra==1234562:
+        modificar()
+        
+    elif contra==1234563:
+        eliminar()
+        
+    elif contra==1234564:
+        ver()
+        
+    else:
+    
+        print("Contraseña incorrecta...")
+        
+        menu()
+
+def op():
+    print("")
+    s1=input("Deseas regresar al menú principal SI/NO: ")
+    if s1=="Si" or s1=="SI" or s1=="si":
+        menuprincipal()
+    elif s1=="NO" or s1=="no" or s1=="No":
+        salir()
+    else:
+        print("")
+        print("Ingrese  SI/NO porfavor")
+        op()
+
+menuprincipal()
+
+def whisper():
+    os.system("cls")
+    print("")
+    print("\tEMBARCACION SILVER - WHISPER  ")
+    print("")
+    print("   Las comodidades de un gran resort. El encanto de un pequeño ")
+    print("   hotel con estilo. El barco de categoría Millennium Silver Whisper ")
+    print("   y su barco hermano Silver Shadow le invitan a disfrutar del")
+    print("   alojamiento de primera categoría de Silversea, así como de su")
+    print("   cordialidad y calidez a bordo del barco y del servicio")
+    print("   individualizado, junto con las comodidades y espacios")
+    print("   mejorados de un barco más amplio ")
+    print("")
+    print("   HUSPEDES     |    382")
+    print("")
+    print("   Tripulacion  |    302")
+    print("")
+    print("   Construccion |    2010")
+    print("")
+    print("   Tonelaje     |    28 258")
+    print("")
+    print("")
+    print("   GRUPO - ROYALCARIBBEAN - INTERNATIOAL ®. ")
+    print("")
+    op()
+
+def discover():
+    os.system("cls")
+    print("")
+    print("\tEMBARCACION SILVER - DISCOVER ")
+    print("")
+    print("   El fiel público de viajeros aventureros de Silversea ya")
+    print("   puede explorar los remotos archipiélagos del vasto")
+    print("   Pacífico a bordo del elegante crucero Silver Discoverer")
+    print("   para 120 huéspedes. Es la plataforma perfecta ")
+    print("   para contemplar estos indómitos paisajes, con todas las")
+    print("   de modo que el salto de una ballena o una manada de delfines")
+    print("   le permite navegar más cerca de la costa, y con una flota ")
+    print("   de 12 zódiacs y un barco con el suelo de cristal")
+    print("   los huéspedes podrán aterrizar en remotas costas y ")
+    print("   explorar los pantanos y ecosistemas sumergidos en profundidad.")
+    print("")
+    print("")
+    print("   HUSPEDES     |    120")
+    print("")
+    print("   Tripulacion  |    96")
+    print("")
+    print("   Construccion |    2014")
+    print("")
+    print("   Tonelaje     |    5 218")
+    print("")
+    print("")
+    print("   GRUPO - ROYALCARIBBEAN - INTERNATIOAL ®. ")
+    print("")
+    op()
