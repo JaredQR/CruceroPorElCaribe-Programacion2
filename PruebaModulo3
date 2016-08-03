@@ -404,3 +404,10 @@ def visualizar():
         print("\n----------------------------\n")
     con.close()
     administrador()
+    def ayuda(n,ape,d,nt):
+    print("1.-Preguntas Frecuentes")
+    print("2.-Terminos y condiciones de Reserva")
+    print("3.-Proteccion y Seguridad")
+    print("4- Contactenos")
+    print("5.-Regresar al Menu Anterior")
+    
